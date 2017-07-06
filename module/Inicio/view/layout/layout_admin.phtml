@@ -1,0 +1,41 @@
+<?= $this->doctype() ?>
+
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <title>SGRyH</title>
+
+        <?= $this->headMeta()
+            ->appendName('viewport', 'width=device-width, initial-scale=1.0')
+            ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
+        ?>
+
+        <!-- Le styles -->
+        <?= $this->headLink(['rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'])
+            ->prependStylesheet($this->basePath('css/bootstrap.min.css'))
+        ?>
+        <?= $this->headScript()
+            ->prependFile($this->basePath('js/bootstrap.min.js'))
+            ->prependFile($this->basePath('js/jquery-1.12.4.min.js'))
+        ?>
+    </head>
+
+    <body class="container">
+      <header class="row">
+     
+        <img width="1200" height="111" src="<?=$this->basePath("img/encabezado.png") ?>">
+      </header>
+      <nav class="navbar navbar-inverse">
+        <ul class="nav navbar-nav">
+          <li><a href="<?= "http://".$_SERVER['HTTP_HOST']."/ciudad/nuevo" ?>">Add</a></li>
+          <li><a href="<?= "http://".$_SERVER['HTTP_HOST']."/ciudad" ?>">Registrados</a></li>
+        </ul>
+      </nav>
+      <div class="row">
+        <?= $this->content ?>
+      </div>
+      <footer class="row">
+        <img width="1200" height="111" src="<?=$this->basePath("img/encabezado1.png") ?>">
+    </body>
+
+</html>

@@ -1,0 +1,29 @@
+<?php
+// module/Album/view/album/album/delete.phtml:
+
+$title = 'Eliminar Turista';
+$url   = $this->url('ciudad', ['action' => 'delete', 'codigo' => $codigo]);
+
+$this->headTitle($title);
+?>
+<h1><?= $this->escapeHtml($title) ?></h1>
+
+<p>
+    Are you sure that you want to delete
+    "<?= $this->escapeHtml($ciudad->codigo)?>"by
+    "<?= $this->escapeHtml($ciudad->nombre) ?>"?
+    "<?= $this->escapeHtml($ciudad->apellidoPaterno) ?>"?
+    "<?= $this->escapeHtml($ciudad->apellidoMaterno) ?>"?
+    "<?= $this->escapeHtml($ciudad->rfc) ?>"?
+    "<?= $this->escapeHtml($ciudad->telefono) ?>"?
+    "<?= $this->escapeHtml($ciudad->email) ?>"?
+    "<?= $this->escapeHtml($ciudad->direccion) ?>"?
+</p>
+
+<form action="<?= $url ?>" method="post">
+<div class="form-group">
+    <input type="hidden" name="id" value="<?= (int) $ciudad->codigo ?>" />
+    <input type="submit" class="btn btn-danger" name="del" value="Yes" />
+    <input type="submit" class="btn btn-success" name="del" value="No" />
+</div>
+</form>
